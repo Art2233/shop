@@ -1,0 +1,14 @@
+<div class="main-page">
+    <div class="row">
+        <div class="col-3">
+            <app-categories
+                [categories]="(products$ | async) || []">
+            </app-categories>
+        </div>
+        <div class="col-9">
+            <app-products
+                [products]="(products$ | async) || []">
+            </app-products>
+        </div>
+    </div>
+</div>

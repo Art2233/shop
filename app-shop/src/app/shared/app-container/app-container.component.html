@@ -1,0 +1,16 @@
+<div class="app-container">
+    @if (sidebar && main) {
+        <div class="row">
+            <div class="col-2 sidebar">
+                <ng-template *ngTemplateOutlet="sidebar"></ng-template>
+            </div>
+        
+            <div class="col-9">
+                <ng-template *ngTemplateOutlet="main"></ng-template>
+            </div>
+        </div>
+    }
+    @else {
+        
+    }
+</div>

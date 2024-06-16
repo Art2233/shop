@@ -1,4 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+$main-gray: #272727;
+$main-orange: #fbd8a9;
+$orange: #ffa632;
 
-/* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import './styles/header.scss';
+@import './styles/form.scss';
+@import "font-awesome";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+button, a {
+    outline: none;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -moz-transition: all .2s ease-in-out 0s;
+    -ms-transition: all .2s ease-in-out 0s;
+    -o-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
