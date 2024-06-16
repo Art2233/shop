@@ -6,7 +6,7 @@ const routes : Routes = [
     ...MainPageRoutes,
     {
         path: '**',
-        redirectTo: 'main',
+        redirectTo: 'products',
     }
 ];
 

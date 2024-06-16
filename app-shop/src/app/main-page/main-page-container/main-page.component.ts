@@ -6,6 +6,7 @@ import { IStore } from '../../reducer';
 import { InitAction } from '../storage/actions';
 import * as Actions from '../storage/actions'
 import { selectCategories, selectProducts } from '../storage/reducer';
+import { NavigatePageAction } from '../../app.actions';
 
 @Component({
   selector: 'app-main-page',
@@ -28,8 +29,13 @@ export class MainPageComponent implements OnInit{
         this.store.dispatch(InitAction());
     }
 
-    test() {
+    openItem(id: number) {
 
-        this.store.dispatch(InitAction());
+        this.store.dispatch(NavigatePageAction({ path: [ `product/${id}` ] }));
+    }
+
+    addItems() {
+
+        this.store.dispatch(Actions.AddItemsAction());
     }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../../http/products.service';
 
 @Component({
@@ -9,4 +9,6 @@ import { IProduct } from '../../../http/products.service';
 export class ProductsComponent {
 
     @Input() products!: IProduct[];
+    @Output() openItem = new EventEmitter<number>();
+    @Output() addItems = new EventEmitter();
 }

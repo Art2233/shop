@@ -8,4 +8,8 @@ export const ExtendStateAction = createAction(
 
 export const InitAction = createAction(
     '[Main Page] Init Action'
-)
+);
+
+export const AddItemsAction = createAction(
+    '[Main Page] Add Items'
+);

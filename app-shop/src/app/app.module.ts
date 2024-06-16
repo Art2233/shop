@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainPageModule } from './main-page/main-page.module';
 import { HttpModule } from './http/http.module';
 import { mainPageEffects as MainPageEffects } from './main-page/storage/effects';
+import { Reducer } from './reducer';
 
 const modules = [
     HeaderModule,
@@ -37,7 +38,7 @@ const EFFECTS = [
         HttpModule,
         NgbModule,
         SharedModule,
-        StoreModule.forRoot({}, {}),
+        StoreModule.forRoot(Reducer),
         EffectsModule.forRoot(EFFECTS),
         StoreRouterConnectingModule.forRoot(),
     ],
