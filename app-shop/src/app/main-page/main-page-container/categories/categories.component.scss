@@ -1,0 +1,17 @@
+.category {
+    font-size: 16px;
+
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    i {
+        height: 20px;
+        width: 20px;
+
+        &.fa {
+            text-align: center;
+        }
+    }
+}

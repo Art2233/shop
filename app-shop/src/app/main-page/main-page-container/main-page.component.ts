@@ -24,8 +24,6 @@ export class MainPageComponent implements OnInit{
 
     ngOnInit(): void {
 
-        console.log(2);
-        
         this.store.dispatch(InitAction());
     }
 

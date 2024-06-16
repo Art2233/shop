@@ -1,0 +1,12 @@
+<div>
+    <div class="category"
+        *ngFor="let category of categories">
+        <i class="fa {{ getIconCategory(category) }}"></i>
+        {{ category }}
+        <br>
+    </div>
+    <div class="category">
+        <i class="fa fa-cubes" aria-hidden="true"></i>
+        all types
+    </div>
+</div>
