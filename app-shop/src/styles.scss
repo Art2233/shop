@@ -5,6 +5,7 @@ $orange: #ffa632;
 @import 'bootstrap/scss/bootstrap';
 @import './styles/header.scss';
 @import './styles/form.scss';
+@import './styles/card.scss';   
 @import "font-awesome";
 
 html, body {
@@ -16,7 +17,7 @@ html, body {
     font-size: 14px;
 }
 
-button, a {
+button, a, .btn {
     outline: none;
     -webkit-transition: all .2s ease-in-out 0s;
     -moz-transition: all .2s ease-in-out 0s;
@@ -28,4 +29,29 @@ button, a {
 .row {
     margin-left: 0px;
     margin-right: 0px;
+}
+
+//бред, но работает
+app-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.full-size {
+    flex: 1;
+}
+
+.full-height {
+    height: 100%;
+}
+
+img {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.recommendation app-products .container {
+    margin: 0;
 }

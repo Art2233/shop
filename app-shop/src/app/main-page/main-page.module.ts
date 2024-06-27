@@ -15,5 +15,8 @@ import { ProductsComponent } from './main-page-container/products/products.compo
   imports: [
     SharedModule
   ],
+  exports: [
+    ProductsComponent
+  ]
 })
 export class MainPageModule { }

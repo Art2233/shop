@@ -13,17 +13,25 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MainPageModule } from './main-page/main-page.module';
 import { HttpModule } from './http/http.module';
-import { mainPageEffects as MainPageEffects } from './main-page/storage/effects';
+import { mainPageEffects } from './main-page/storage/effects';
 import { Reducer } from './reducer';
+import { SelectedProductModule } from './selected-product/selected-product.module';
+import { selectedProcutEffects } from './selected-product/storege/effects';
+import { BasketModule } from './basket/basket.module';
+import { basketEffects } from './basket/storage/effects';
 
 const modules = [
     HeaderModule,
-    MainPageModule
+    MainPageModule,
+    SelectedProductModule,
+    BasketModule
 ];
 
 const EFFECTS = [
     AppEffects,
-    ...MainPageEffects
+    ...mainPageEffects,
+    ...selectedProcutEffects,
+    ...basketEffects
 ];
 
 @NgModule({

@@ -2,3 +2,40 @@
     background-color: unset;
     border: 0px;
 }
+
+.panel {
+    border: 1px solid #dadada;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.category-text {
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(255, 165, 48);
+        text-decoration: underline;
+    }
+}
+
+.btn {
+    border: 0px;
+    padding: 5px 20px;
+    font-size: 24px;
+    border-radius: 10px;
+
+    &.yellow {
+        background-color: $main-orange;
+
+        &:hover {
+            background-color: $orange;
+        }
+    }
+}
+
+.parent-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

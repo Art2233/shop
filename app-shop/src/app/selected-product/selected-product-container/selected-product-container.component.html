@@ -1,0 +1,72 @@
+<div class="full-height"
+    *ngIf="(currentProduct$ | async)">
+    <div class="row">
+
+        <div class="col-12" style="margin-top: 20px;">
+            <div class="row">
+                <div class="col-6 img-section">
+                    <div class="row">
+                        <div class="col-12 img-container">
+                            <img src="{{ (currentProduct$ | async)?.image }}">
+                        </div>
+                        <div>
+                            {{ (currentProduct$ | async)?.description }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="product-title">
+                        <div class="row">
+                            <div class="col-11">
+                                {{ (currentProduct$ | async)?.title }}
+                            </div>
+                            <div class="col">
+                                <i class="fa fa-heart-o"
+                                    *ngIf="!(currentProduct$ | async)?.inBasket"
+                                    (click)="$event.stopPropagation(); addItemToBasket()"></i>
+                                <i class="fa fa-heart"
+                                    *ngIf="(currentProduct$ | async)?.inBasket"
+                                    (click)="$event.stopPropagation(); removeItemFromBasket()"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <ngb-rating *ngIf="(currentProduct$ | async)?.rating?.rate"
+                        [rate]="(currentProduct$ | async)!.rating.rate ?? 0"/>
+                    <div class="panel"
+                        *ngIf="(currentProduct$ | async)?.price">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="old-price">
+                                    {{ ((currentProduct$ | async)!.price + 10).toFixed(2) }}$
+                                </div>
+                                <div class="new-price">
+                                    {{ (currentProduct$ | async)?.price }}$
+                                </div>
+                            </div>
+                            <div class="col parent-div">
+                                <button class="btn yellow">
+                                    Buy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 recommendation">
+            <div class="col-12 recommendation-text">
+                Similar products
+            </div>
+            <div class="col-12">
+                <app-products
+                    [products]="(recommendation$ | async) || []"
+                    [isShowAddItem]="false"
+                    (openItem)="openItem($event)"
+                    (addItemToBasket)="addItemToBasketProduct($event)"
+                    (removeItemFromBasket)="removeItemFromBasketProduct($event)">
+                </app-products>
+            </div>
+        </div>
+    </div>
+</div>

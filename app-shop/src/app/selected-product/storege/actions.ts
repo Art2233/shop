@@ -3,21 +3,13 @@ import { IState } from "./reducer";
 import { IProduct } from "../../http/products.service";
 
 export const ExtendStateAction = createAction(
-    '[Main Page] Extend State',
+    '[Selected Product] Extend State',
     props<{ newState: Partial<IState> }>(),
 );
 
-export const InitAction = createAction(
-    '[Main Page] Init Action'
-);
-
-export const AddItemsAction = createAction(
-    '[Main Page] Add Items'
-);
-
-export const CategoryProductsAction = createAction(
-    '[Main Page] Category Products',
-    props<{ category: string }>(),
+export const SelecteCurrentProductAction = createAction(
+    '[Selected Product] Selecte Current Product',
+    props<{ id: number }>(),
 );
 
 export const AddItemToBasketProductAction = createAction(

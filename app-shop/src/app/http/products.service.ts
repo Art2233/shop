@@ -14,6 +14,7 @@ export interface IProduct {
     category: string;
     image: string;
     rating: IRating;
+    inBasket: boolean
 }
 
 @Injectable({
@@ -25,7 +26,7 @@ export class ProductsService {
         private http: HttpClient
     ) { }
 
-    getProducts() {
+    getAllProducts() {
 
         return this.http.get<IProduct[]>('products');
     }
@@ -33,5 +34,15 @@ export class ProductsService {
     getCategories() {
 
         return this.http.get<string[]>('products/categories');
+    }
+
+    getCategoryProducts(category: string) {
+
+        return this.http.get<IProduct[]>(`products/category/${category}`);
+    }
+
+    getProductById(id: number) {
+
+        return this.http.get<IProduct>(`products/${id}`);
     }
 }

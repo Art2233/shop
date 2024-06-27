@@ -3,15 +3,25 @@
         <div class="card"
             *ngFor="let product of products"
             (click)="openItem.emit(product.id)">
+            <i class="fa fa-heart-o"
+                *ngIf="!product.inBasket"
+                (click)="$event.stopPropagation(); addItemToBasket.emit(product)"></i>
+            <i class="fa fa-heart"
+                *ngIf="product.inBasket"
+                (click)="$event.stopPropagation(); removeItemFromBasket.emit(product)"></i>
             <img src="{{ product.image }}" alt="">
             <div class="limit-letters">
                 {{ product.title }}
             </div>
+            <div class="price">
+                {{ product.price }}$
+            </div>
         </div>
     </div>
     <div class="add-item-text"
+        *ngIf="isShowAddItem"
         (click)="addItems.emit()">
-        Відкрити ще...
+        Open more...
     </div>
 </div>
 

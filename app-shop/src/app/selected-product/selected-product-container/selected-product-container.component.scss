@@ -1,0 +1,48 @@
+.img-container {
+    // width: 600px;
+    height: 600px;
+    text-align: center;
+}
+
+.img-section {
+    display: flex;
+    justify-content: center;
+}
+
+.product-title {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.full-height {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 20px;
+}
+
+.new-price {
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.recommendation {
+    margin-top: 100px;
+
+    .recommendation-text {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.fa-heart-o, .fa-heart {
+    color: orange;
+    cursor: pointer;
+}

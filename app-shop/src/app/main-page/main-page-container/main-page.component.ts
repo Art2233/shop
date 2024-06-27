@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../http/products.service';
 import { Store } from '@ngrx/store';
 import { IState } from '../../app.reducer';
 import { IStore } from '../../reducer';
@@ -7,6 +6,8 @@ import { InitAction } from '../storage/actions';
 import * as Actions from '../storage/actions'
 import { selectCategories, selectProducts } from '../storage/reducer';
 import { NavigatePageAction } from '../../app.actions';
+import { AddItemToBasketAction, RemoveItemFromBasketAction } from '../../basket/storage/actions';
+import { IProduct } from '../../http/products.service';
 
 @Component({
   selector: 'app-main-page',
@@ -29,11 +30,28 @@ export class MainPageComponent implements OnInit{
 
     openItem(id: number) {
 
-        this.store.dispatch(NavigatePageAction({ path: [ `product/${id}` ] }));
+        this.store.dispatch(NavigatePageAction({ path: [ `products/${id}` ] }));
     }
 
     addItems() {
 
         this.store.dispatch(Actions.AddItemsAction());
+    }
+
+    openCategoryProducts(category: string) {
+        
+        this.store.dispatch(Actions.CategoryProductsAction({ category }));
+    }
+
+    addItemToBasket(item: IProduct) {
+
+        this.store.dispatch(AddItemToBasketAction({ item }));
+        this.store.dispatch(Actions.AddItemToBasketProductAction({ item }));
+    }
+
+    removeItemFromBasket(item: IProduct) {
+
+        this.store.dispatch(RemoveItemFromBasketAction({ item }));
+        this.store.dispatch(Actions.RemoveItemFromBasketProductAction({ item }));
     }
 }

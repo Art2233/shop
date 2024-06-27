@@ -1,11 +1,13 @@
 <div>
     <div class="category"
-        *ngFor="let category of categories">
+        *ngFor="let category of categories"
+        (click)="openCategoryProducts.emit(category)">
         <i class="fa {{ getIconCategory(category) }}"></i>
         {{ category }}
         <br>
     </div>
-    <div class="category">
+    <div class="category"
+        (click)="openCategoryProducts.emit('all')">
         <i class="fa fa-cubes" aria-hidden="true"></i>
         all types
     </div>

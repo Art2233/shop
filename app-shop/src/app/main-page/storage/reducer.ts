@@ -5,12 +5,14 @@ import { IStore } from "../../reducer"
 
 export interface IState {
     products: IProduct[],
-    categories: string[]
+    categories: string[],
+    category: string,
 }
 
 export const initialState: IState = {
     products: [],
-    categories: []
+    categories: [],
+    category: ''
 }
 
 export const reducer = createReducer(
